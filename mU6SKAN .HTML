@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسکان گارمنٹس - بمبئی بازار ٹنڈو آدم</title>
+    
+    <!-- Modern Urdu Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0c0c0c;
+            --gray: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        /* ہموار اسکرولنگ */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- Header Navigation (Fixed & Working) --- */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid var(--gold);
+            position: fixed;
+            top: 0; width: 100%; z-index: 9999;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo { font-size: 26px; font-weight: 900; color: var(--gold); text-decoration: none; }
+
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav ul li a {
+            text-decoration: none; color: var(--white);
+            font-weight: 700; font-size: 18px; transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--gold); }
+
+        /* --- Hero Section --- */
+        #home {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('bg.jpg'); /* بینر کی تصویر */
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; text-align: center; padding-top: 80px;
+        }
+
+        #home h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 10px; }
+        #home p { font-size: 1.5rem; color: #ccc; max-width: 800px; margin-bottom: 25px; }
+
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            padding: 12px 35px; border-radius: 5px; text-decoration: none;
+            font-weight: bold; display: flex; align-items: center; gap: 10px;
+            font-size: 18px; transition: 0.3s;
+        }
+        .btn-tiktok { background: #000; color: white; border: 1px solid var(--gold); }
+        .btn-call { background: var(--gold); color: black; }
+
+        /* --- Variety Grid (Using Device Images) --- */
+        #variety { padding: 120px 5% 60px 5%; }
+        .section-title { text-align: center; color: var(--gold); font-size: 35px; margin-bottom: 40px; font-weight: 900; }
+
+        .variety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .img-card {
+            background: var(--gray);
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 350px;
+            position: relative;
+        }
+
+        .img-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.5s; }
+        .img-card:hover img { transform: scale(1.1); }
+
+        .img-label {
+            position: absolute; bottom: 0; background: rgba(0,0,0,0.85);
+            width: 100%; text-align: center; color: var(--gold); padding: 10px;
+            font-weight: bold; font-size: 16px;
+        }
+
+        /* --- About Section --- */
+        #about { background-color: var(--gray); padding: 100px 10%; text-align: center; border-top: 1px solid #333; }
+        #about h2 { color: var(--gold); margin-bottom: 25px; font-size: 32px; }
+        #about p { font-size: 20px; line-height: 2; color: #ddd; max-width: 1000px; margin: 0 auto; }
+
+        /* --- Contact Section --- */
+        #contact { padding: 100px 5%; text-align: center; }
+        .contact-box {
+            display: inline-block; background: #000; border: 1px solid var(--gold);
+            padding: 50px; border-radius: 15px; width: 100%; max-width: 800px;
+        }
+        .contact-item { margin-bottom: 30px; }
+        .contact-item i { font-size: 40px; color: var(--gold); margin-bottom: 15px; }
+
+        footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid #111; }
+
+        /* موبائل کے لیے سیٹنگز */
+        @media (max-width: 768px) { 
+            header { flex-direction: column; padding: 10px; height: auto; position: fixed; }
+            nav ul { margin-top: 10px; gap: 15px; }
+            #home h1 { font-size: 2.2rem; }
+            #home { padding-top: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#home" class="logo">مسکان گارمنٹس</a>
+        <nav>
+            <ul>
+                <li><a href="#home">ہوم</a></li>
+                <li><a href="#variety">ورائٹی</a></li>
+                <li><a href="#about">ہمارے بارے میں</a></li>
+                <li><a href="#contact">رابطہ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <h1>مسکان گارمنٹس ٹنڈو آدم</h1>
+        <p>بچوں اور بچیوں کے بہترین فینسی اور ریڈی میڈ ملبوسات کا مرکز۔ بمبئی بازار کی ایک بااعتماد دکان۔</p>
+        <div class="btn-group">
+            <a href="https://www.tiktok.com/@muskan.garments1" target="_blank" class="btn btn-tiktok">
+                <i class="fab fa-tiktok"></i> ٹک ٹاک ورائٹی دیکھیں
+            </a>
+            <a href="tel:03133597303" class="btn btn-call">
+                <i class="fas fa-phone-alt"></i> ابھی کال کریں
+            </a>
+        </div>
+    </section>
+
+    <!-- Variety Section (Apki Device ki images) -->
+    <section id="variety">
+        <h2 class="section-title">ورائٹی</h2>
+        <div class="variety-grid">
+            
+            <div class="img-card">
+                <img src="1.jpg.jpg" alt="Variety 1">
+                <div class="img-label">بچیوں کے فینسی فراک</div>
+            </div>
+
+            <div class="img-card">
+                <img src="7.jpg.jpg" alt="Variety 2">
+                <div class="img-label">بچوں کے فینسی سوٹ</div>
+            </div>
+
+            <div class="img-card">
+                <img src="3.jpg.webp" alt="Variety 3">
+                <div class="img-label">شلوار قمیض</div>
+            </div>
+
+            <div class="img-card">
+                <img src="4.jpg.webp" alt="Variety 4">
+                <div class="img-label">عید اسپیشل کلیکشن</div>
+            </div>
+
+            <div class="img-card">
+                <img src="6.jpg.jpg" alt="Variety 5">
+                <div class="img-label">نیو بورن بیبی ورائٹی</div>
+            </div>
+
+            <div class="img-card">
+                <img src="2.jpg.jpg" alt="Variety 6">
+                <div class="img-label">پارٹی ویئر کلیکشن</div>
+            </div>
+
+            <div class="img-card">
+                <img src="boys-winter-153444.jpg" alt="Variety 7">
+                <div class="img-label">ونٹر فیشن کلیکشن</div>
+            </div>
+
+            <div class="img-card">
+                <img src="romper.webp">
+                <div class="img-label">بیبی ریڈی میڈ رومپر</div>
+            </div>
+<div class="img-card">
+                <img src="PrinceCoatForKids.webp" alt="Variety 5">
+                <div class="img-label">بچوں کے پروگرام وغیرا کے کپرے </div>
+            </div>
+			
+			<div class="img-card">
+                <img src="party wear.webp" alt="Variety 5">
+                <div class="img-label">hello</div>
+            </div>
+       
+
+
+
+
+	   </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>ہمارے بارے میں</h2>
+        <p>مسکان گارمنٹس ٹنڈو آدم کا ایک قدیم اور بااعتماد نام ہے جو کئی سالوں سے بمبئی بازار میں اپنی خدمات سرانجام دے رہا ہے۔ ہم اپنے کسٹمرز کو بچوں اور بچیوں کے بہترین ریڈی میڈ اور فینسی ملبوسات فراہم کرتے ہیں۔ ہماری تمام ورائٹی جدید فیشن کے مطابق ہوتی ہے۔</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-box">
+            <h2 style="color: var(--gold); margin-bottom: 40px;">ہم سے رابطہ کریں</h2>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>بمبئی بازار، ٹنڈو آدم، سندھ</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <p dir="ltr" style="font-size: 26px; font-weight: bold;">0313-3597303</p>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <p>muskan.garments1</p>
+                <a href="https://www.tiktok.com/@muskan.garments1" target="_blank" style="color: var(--gold); text-decoration: none; font-size: 16px;">(ٹک ٹاک لنک)</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Muskan Garments Bombay Bazar Tando Adam. All Rights Reserved.</p>
+    </footer>
+
+</a>
+<header>
+    <!-- Left Side: Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">ہوم</a></li>
+            <li><a href="#variety">ورائٹی</a></li>
+            <li><a href="#about">ہمارے بارے میں</a></li>
+            <li><a href="#contact">رابطہ</a></li>
+        </ul>
+    </nav>
+
+    
+<h1 class="my-title">مسکان گارمنٹس</h1>
+<!-- Right Side: Logo -->
+    <a href="#home">
+        <img src="m G.png" alt="Muskan Garments" style="height: 50px; width: auto; display: block;">
+    </a>
+
+
+</header>
+
+
+
+
+</body>
+</html>
